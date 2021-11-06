@@ -1,0 +1,21 @@
+{
+  "services": [
+    {
+      "name": "Google\\Cloud\\PubSub\\PubSubClient",
+      "service": "Google\\Cloud\\PubSub\\PubSubClient",
+      "arguments": {
+        "config": {}
+      }
+    }
+  ],
+  "aliases": [
+    {
+      "interface": "SaaSFormation\\Vendor\\Queue\\QueueInterface",
+      "service": "SaaSFormation\\Vendor\\Queue\\PubSubQueue"
+    },
+    {
+      "interface": "SaaSFormation\\Vendor\\CommandStore\\CommandStoreInterface",
+      "service": "SaaSFormation\\Vendor\\CommandStore\\MySQLCommandStore"
+    }
+  ]
+}

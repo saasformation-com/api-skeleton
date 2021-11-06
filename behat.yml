@@ -1,0 +1,7 @@
+default:
+  suites:
+    functional:
+      paths:
+        - '%paths.base%/tests/Functional/Features'
+      contexts:
+        - App\Tests\Functional\Context\MainContext:

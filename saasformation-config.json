@@ -1,0 +1,32 @@
+{
+  "name": "test",
+  "cli": {
+    "version": "8.0.12"
+  },
+  "serve": {
+    "services": [
+      {
+        "name": "php-cli",
+        "image": "php",
+        "version": "8.0.12-cli-alpine3.13",
+        "volumes": [
+          "../:/var/www"
+        ],
+        "working_dir": "/var/www",
+        "command": "php public/server.php",
+        "ports": [
+          "80:80"
+        ],
+        "environment": {
+          "PUBSUB_EMULATOR_HOST": "google-pubsub:8681"
+        }
+      },
+      {
+        "name": "google-pubsub",
+        "image": "messagebird/gcloud-pubsub-emulator",
+        "version": "latest",
+        "restart": "always"
+      }
+    ]
+  }
+}
